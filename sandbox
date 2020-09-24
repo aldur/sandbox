@@ -559,6 +559,11 @@ EOF
       docker cp "$1" "$(dc ps -q algod):/opt/data/$1"
       ;;
 
+    tealdbg)
+      shift
+      dc exec algod tealdbg "$@"
+      ;;
+
     *)
       help
       ;;
